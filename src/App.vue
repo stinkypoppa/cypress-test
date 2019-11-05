@@ -1,18 +1,45 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>{{message}}</p>
+    <input placeholder="Name: " v-model="name"/>
+    <input placeholder="Address: " v-model="address"/>
+    <button v-on:click="validate">Ok</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    
+  }, data: function(){
+    return {
+      name: '',
+      address: '',
+      message: ''
+    }
+  }, methods: {
+    validate() {
+      try {
+        this.validateName();
+        this.validateAddress();
+        this.message = "All ok";
+      } catch(err){
+        this.message = err.message;
+      }
+    },
+    validateName() {
+      if(this.name==='')
+        throw new Error("Name is missing");
+    },
+    validateAddress() {
+      if(this.address==='')
+        throw new Error("Address is missing");
+    }
+}
 }
 </script>
 
