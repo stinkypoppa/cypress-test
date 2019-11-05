@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "ci:cypress": "./node_modules/.bin/cypress run",
-    "test": "npm run build && npm run ci:cypress",
+    "test": "npm run build && npm run server && npm run ci:cypress",
     "server": "./node_modules/.bin/lite-server --baseDir='dist'"
   
   },
