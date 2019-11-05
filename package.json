@@ -6,9 +6,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "cypress": "./node_modules/.bin/cypress run",
-    "test": "npm run build && npm run server && npm run cypress",
-    "server": "./node_modules/.bin/lite-server -c bs-config.json &"
+    "server": "./node_modules/.bin/lite-server -c bs-config.json &",
+    "e2etest": "./node_modules/.bin/cypress run",
+    "test": "npm run, lint && npm run build && npm run server && npm run e2etest",
+    "posttest": "pkill -f ./node_modules/.bin/lite-server"
   },
   "dependencies": {
     "core-js": "^3.3.2",
