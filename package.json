@@ -6,7 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test": "./node_modules/.bin/cypress run"
+    "ci:cypress": "./node_modules/.bin/cypress run",
+    "test": "npm run build && npm run test"
+  
   },
   "dependencies": {
     "core-js": "^3.3.2",
@@ -20,6 +22,7 @@
     "cypress": "^3.6.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "lite-server": "^2.5.4",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
