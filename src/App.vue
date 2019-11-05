@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <p>{{message}}</p>
+    <p>{{message}} hej</p>
     <input placeholder="Name: " v-model="name"/>
     <input placeholder="Address: " v-model="address"/>
     <button v-on:click="validate">Ok</button>
